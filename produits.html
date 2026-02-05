@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits & Équipements | ABS Technologie Group</title>
+    <meta name="description" content="Découvrez notre gamme complète de produits électroniques, électroménager et solutions technologiques">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0033A0;
+            --secondary-blue: #0056D6;
+            --orange-gradient: linear-gradient(135deg, #FF7900 0%, #FFB300 100%);
+            --samsung-blue: #1428A0;
+            --dark-bg: #0A0F2B;
+            --light-bg: #F8FAFF;
+            --card-shadow: 0 20px 40px rgba(0, 51, 160, 0.1);
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(0, 51, 160, 0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 51, 160, 0.1);
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .products-hero {
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001E6E 100%);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gradient-text {
+            background: var(--orange-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .category-link {
+            display: block;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #666;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: var(--orange-gradient);
+            transition: var(--transition-smooth);
+        }
+
+        .category-link:hover {
+            color: var(--primary-blue);
+            background: rgba(0, 51, 160, 0.03);
+        }
+
+        .category-link:hover::before,
+        .category-link.active::before {
+            width: 100%;
+        }
+
+        .category-link.active {
+            color: var(--primary-blue);
+            background: rgba(0, 51, 160, 0.05);
+        }
+
+        .category-icon {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 60px 0;
+            display: none;
+        }
+
+        .products-section.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--orange-gradient);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--orange-gradient);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s ease forwards;
+        }
+
+        @keyframes cardAppear {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 51, 160, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--orange-gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(255, 121, 0, 0.3);
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e3e9ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+            transition: var(--transition-smooth);
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-tag {
+            padding: 6px 12px;
+            background: rgba(0, 51, 160, 0.08);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .product-cta {
+            padding: 10px 20px;
+            background: var(--orange-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-cta:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(255, 121, 0, 0.3);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        /* Interactive Elements */
+        .interactive-highlight {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-highlight::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .interactive-highlight:hover::after {
+            left: 100%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a237e 100%);
+            text-align: center;
+            border-radius: 30px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--orange-gradient);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 121, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 121, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+        }
+
+        .footer-brand .logo-subtext {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--orange-gradient);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-list {
+                flex-wrap: wrap;
+            }
+            
+            .category-item {
+                flex: 0 0 33.333%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .category-item {
+                flex: 0 0 50%;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .category-item {
+                flex: 0 0 100%;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">ABS</span>
+                <span class="logo-subtext">TECHNOLOGIE</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Retour à l'accueil
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Univers Technologique</span> ABS
+                </h1>
+                <p class="hero-subtitle">
+                    Découvrez notre sélection exclusive de produits électroniques et électroménagers Samsung, 
+                    alliant innovation, design et performance pour transformer votre quotidien.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <div class="container">
+        <nav class="category-nav">
+            <ul class="category-list">
+                <li class="category-item">
+                    <a href="#smartphones" class="category-link active" data-category="smartphones">
+                        <i class="fas fa-mobile-alt category-icon"></i>
+                        Smartphones
+                    </a>
+                </li>
+                <li class="category-item">
+                    <a href="#tv" class="category-link" data-category="tv">
+                        <i class="fas fa-tv category-icon"></i>
+                        Téléviseurs
+                    </a>
+                </li>
+                <li class="category-item">
+                    <a href="#electromenager" class="category-link" data-category="electromenager">
+                        <i class="fas fa-blender category-icon"></i>
+                        Électroménager
+                    </a>
+                </li>
+                <li class="category-item">
+                    <a href="#audio" class="category-link" data-category="audio">
+                        <i class="fas fa-headphones category-icon"></i>
+                        Audio
+                    </a>
+                </li>
+                <li class="category-item">
+                    <a href="#tablettes" class="category-link" data-category="tablettes">
+                        <i class="fas fa-tablet-alt category-icon"></i>
+                        Tablettes
+                    </a>
+                </li>
+                <li class="category-item">
+                    <a href="#accessoires" class="category-link" data-category="accessoires">
+                        <i class="fas fa-cogs category-icon"></i>
+                        Accessoires
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Smartphones Section -->
+    <section id="smartphones" class="products-section active">
+        <div class="container">
+            <div class="section-header">
+                <!-- <span class="section-label">Premium</span> -->
+                <h2 class="section-title">Smartphones Samsung</h2>
+                <p>La série Galaxy redéfinit l'expérience mobile avec des performances exceptionnelles</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card interactive-highlight">
+                    <!-- <div class="product-badge">Nouveauté</div> -->
+                    <div class="product-image">
+                        <!-- Image placeholder - would be replaced with actual images -->
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">S24</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung Galaxy S24 Ultra</h3>
+                        <p class="product-description">
+                            Le smartphone ultime avec appareil photo de 200MP, écran Dynamic AMOLED 2X et processeur Snapdragon 8 Gen 3.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">200MP Caméra</span>
+                            <span class="feature-tag">Écran 6.8"</span>
+                            <span class="feature-tag">5000mAh</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 799.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card interactive-highlight">
+                    <!-- <div class="product-badge">Best Seller</div> -->
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">Z Fold5</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung Galaxy Z Fold5</h3>
+                        <p class="product-description">
+                            Le smartphone pliable révolutionnaire avec écran principal de 7.6 pouces et technologie Flex Mode.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">Écran Pliable</span>
+                            <span class="feature-tag">Multi-tâches</span>
+                            <span class="feature-tag">S Pen</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 899.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card interactive-highlight">
+                    <!-- <div class="product-badge">Économique</div> -->
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">A54</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung Galaxy A54 5G</h3>
+                        <p class="product-description">
+                            Performance 5G à prix abordable avec écran Super AMOLED 120Hz et batterie longue durée.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">5G</span>
+                            <span class="feature-tag">120Hz</span>
+                            <span class="feature-tag">IP67</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 299.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Section -->
+    <section id="tv" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Immersion Totale</span>
+                <h2 class="section-title">Téléviseurs Samsung</h2>
+                <p>Des images époustouflantes avec la technologie Neo QLED et OLED</p>
+            </div>
+            <div class="products-grid">
+                <!-- TV Product 1 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">Top Technologie</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">Neo QLED</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung Neo QLED 8K</h3>
+                        <p class="product-description">
+                            Résolution 8K avec Quantum Matrix Technology et processeur Neural Quantum 8K pour une image parfaite.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">8K UHD</span>
+                            <span class="feature-tag">Quantum HDR</span>
+                            <span class="feature-tag">Object Tracking</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 1.200.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TV Product 2 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">Design Ultime</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">OLED</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung OLED 4K</h3>
+                        <p class="product-description">
+                            Noirs parfaits et couleurs vibrantes avec la technologie OLED et processeur Neural Quantum 4K.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">OLED 4K</span>
+                            <span class="feature-tag">Dolby Atmos</span>
+                            <span class="feature-tag">Smart TV</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 850.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TV Product 3 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">The Frame</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">The Frame</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung The Frame</h3>
+                        <p class="product-description">
+                            Quand la télévision devient une œuvre d'art. Mode Art lorsque vous ne regardez pas la télé.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">Mode Art</span>
+                            <span class="feature-tag">Design Luxe</span>
+                            <span class="feature-tag">QLED 4K</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 700.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Électroménager Section -->
+    <section id="electromenager" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Maison Connectée</span>
+                <h2 class="section-title">Électroménager Samsung</h2>
+                <p>Des appareils intelligents pour une maison moderne et efficace</p>
+            </div>
+            <div class="products-grid">
+                <!-- Électroménager Product 1 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">IA intégrée</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Réfrigérateur Family Hub</h3>
+                        <p class="product-description">
+                            Réfrigérateur intelligent avec écran tactile, gestion des courses, recettes et contrôle vocal.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">Écran 21"</span>
+                            <span class="feature-tag">Bixby Voice</span>
+                            <span class="feature-tag">SpaceMax</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 1.500.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Électroménager Product 2 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">Économie d'énergie</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Lave-linge AI Ecobubble</h3>
+                        <p class="product-description">
+                            Lave-linge intelligent avec technologie Ecobubble et AI qui adapte les cycles de lavage.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">10kg</span>
+                            <span class="feature-tag">Ecobubble</span>
+                            <span class="feature-tag">WiFi Connect</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 450.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Électroménager Product 3 -->
+                <div class="product-card interactive-highlight">
+                    <div class="product-badge">Cuisine Pro</div>
+                    <div class="product-image">
+                        <div style="color: #0033A0; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Table de cuisson à induction</h3>
+                        <p class="product-description">
+                            Table de cuisson induction avec zone flexible et contrôle Wi-Fi via smartphone.
+                        </p>
+                        <div class="product-features">
+                            <span class="feature-tag">Induction</span>
+                            <span class="feature-tag">Zone Flexible</span>
+                            <span class="feature-tag">Virtual Flame</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">À partir de 350.000 FCFA</div>
+                            <a href="#" class="product-cta">
+                                Détails
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Intéressé par un produit ?</h2>
+            <p class="cta-subtitle">
+                Contactez notre équipe de spécialistes pour obtenir des conseils personnalisés, 
+                une démonstration en showroom ou un devis sur mesure.
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i>
+                    Nous contacter
+                </a>
+                <a href="index.html#showroom" class="btn btn-secondary">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Visiter le showroom
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">ABS</span>
+                        <span class="logo-subtext">TECHNOLOGIE</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Votre partenaire technologique de confiance au Bénin
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html#accueil">Accueil</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#partenaires">Partenaires</a></li>
+                            <li><a href="index.html#apropos">À Propos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Produits</h4>
+                        <ul>
+                            <li><a href="#smartphones">Smartphones</a></li>
+                            <li><a href="#tv">Téléviseurs</a></li>
+                            <li><a href="#electromenager">Électroménager</a></li>
+                            <li><a href="#audio">Audio</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li>En Face de HÔPITAL DES ARMÉES, Camp Guezo, 03 B.P 1825, Cotonou</li>
+                            <li>+229 01 96 06 26 26</li>
+                            <li>contact@abstechnologie.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ABS TECHNOLOGIE Group SARL. Tous droits réservés.</p>
+                <p class="footer-partners">
+                    Distributeur agréé <strong>Samsung</strong> | Représentant exclusif <strong>Orange</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryLinks = document.querySelectorAll('.category-link');
+            const productSections = document.querySelectorAll('.products-section');
+            
+            // Initialize first category as active
+            const firstCategory = document.querySelector('.category-link.active');
+            const firstCategoryId = firstCategory.getAttribute('data-category');
+            
+            // Show first category's products
+            document.getElementById(firstCategoryId).classList.add('active');
+            
+            // Category switching functionality
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    productSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(category).classList.add('active');
+                    
+                    // Smooth scroll to section
+                    document.getElementById(category).scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Animate product cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const cards = entry.target.querySelectorAll('.product-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.animationDelay = `${index * 0.1}s`;
+                            }, 100);
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            productSections.forEach(section => observer.observe(section));
+            
+            // Floating elements animation
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 2}s`;
+            });
+            
+            // Interactive hover effect enhancement
+            const interactiveElements = document.querySelectorAll('.interactive-highlight');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                el.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.products-hero');
+            const rate = scrolled * 0.5;
+            
+            hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+        });
+    </script>
+</body>
+</html>
