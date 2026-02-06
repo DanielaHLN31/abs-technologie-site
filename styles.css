@@ -1512,8 +1512,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Note d'information */
-
-/* Note d'information */
 .gallery-note {
     text-align: center;
     padding: 24px;
@@ -1539,7 +1537,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--orange-light);
     font-size: 24px;
     flex-shrink: 0;
-} 
+}
 
 /* Animation de chargement */
 .gallery-img.loading {
@@ -1551,6 +1549,91 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes loading {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
+}
+
+/* Responsive Design pour la galerie */
+@media (max-width: 1024px) {
+    .gallery-item:nth-child(1) {
+        min-height: 350px;
+    }
+    
+    .gallery-item:nth-child(2) {
+        grid-column: span 12;
+        grid-row: span 1;
+        min-height: 400px;
+    }
+    
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4) {
+        grid-column: span 6;
+        min-height: 280px;
+    }
+    
+    .gallery-item:nth-child(5),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(7) {
+        grid-column: span 6;
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        gap: 16px;
+    }
+    
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(7) {
+        grid-column: span 12;
+        min-height: 250px;
+    }
+    
+    .gallery-img {
+        border-radius: 16px;
+    }
+    
+    .gallery-overlay {
+        padding: 24px;
+    }
+    
+    .gallery-info h4 {
+        font-size: 18px;
+    }
+    
+    .gallery-info p {
+        font-size: 13px;
+    }
+    
+    .gallery-note p {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(7) {
+        min-height: 220px;
+    }
+    
+    .gallery-overlay {
+        padding: 20px;
+    }
+    
+    .gallery-note {
+        padding: 16px;
+    }
 }
 
 /* ==================== Responsive Design ==================== */
