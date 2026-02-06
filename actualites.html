@@ -225,6 +225,7 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, var(--dark-bg) 0%, #1a237e 100%);
+            height: 400px;
         }
 
         [data-theme="dark"] .news-hero {
@@ -255,6 +256,7 @@
             max-width: 800px;
             margin: 0 auto;
             animation: fadeInUp 1s ease-out;
+            bottom: 4rem;
         }
 
         @keyframes fadeInUp {
@@ -289,113 +291,6 @@
             background-clip: text;
             color: transparent;
             display: inline-block;
-        }
-
-        /* Filter Section */
-        .filter-section {
-            padding: 40px 0;
-            background: white;
-            position: sticky;
-            top: 75px;
-            z-index: 100;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: var(--transition-smooth);
-        }
-
-        [data-theme="dark"] .filter-section {
-            background: var(--card-bg, #1a1f2e);
-        }
-
-        .filter-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .filter-tabs {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .filter-tab {
-            padding: 12px 30px;
-            border: 2px solid rgba(0, 51, 160, 0.2);
-            background: transparent;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--text-primary, #333);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .filter-tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--orange-gradient);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .filter-tab:hover::before {
-            left: 0;
-        }
-
-        .filter-tab:hover {
-            color: white;
-            border-color: transparent;
-        }
-
-        .filter-tab.active {
-            background: var(--orange-gradient);
-            color: white;
-            border-color: transparent;
-        }
-
-        .filter-tab.active::before {
-            left: 0;
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 20px;
-            background: rgba(0, 51, 160, 0.05);
-            border-radius: 50px;
-            border: 2px solid rgba(0, 51, 160, 0.1);
-            transition: var(--transition-smooth);
-        }
-
-        [data-theme="dark"] .search-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .search-box:focus-within {
-            border-color: var(--primary-blue);
-            background: rgba(0, 51, 160, 0.08);
-        }
-
-        .search-input {
-            border: none;
-            background: transparent;
-            outline: none;
-            width: 250px;
-            color: var(--text-primary, #333);
-            font-size: 0.95rem;
-        }
-
-        .search-input::placeholder {
-            color: #999;
         }
 
         /* Main Carousel Section */
@@ -458,7 +353,7 @@
             font-size: 1.1rem;
         }
 
-        /* Main Carousel - Amélioré */
+        /* Main Carousel - Images occupant tout l'espace */
         .main-carousel-container {
             position: relative;
             max-width: 1200px;
@@ -466,18 +361,18 @@
             overflow: hidden;
             border-radius: 25px;
             box-shadow: 0 30px 60px rgba(0, 51, 160, 0.2);
-            background: white;
+            background: #1a1a1a;
         }
 
         [data-theme="dark"] .main-carousel-container {
-            background: var(--card-bg);
+            background: #000;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .main-carousel {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-            height: 600px;
+            height: 800px;
         }
 
         .carousel-slide {
@@ -491,6 +386,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             filter: brightness(0.85);
             transition: transform 0.8s ease, filter 0.5s ease;
         }
@@ -549,17 +445,17 @@
         }
 
         .slide-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             line-height: 1.2;
             animation: fadeIn 1s ease-out 0.5s both;
         }
 
         .slide-description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             max-width: 600px;
             animation: fadeIn 1s ease-out 0.7s both;
         }
@@ -577,7 +473,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 35px;
+            padding: 10px 30px;
             background: white;
             color: var(--primary-blue);
             border-radius: 50px;
@@ -704,195 +600,6 @@
             background: var(--orange-gradient);
             z-index: 11;
             transition: width 0.1s linear;
-        }
-
-        /* Thumbnail Carousel - Amélioré */
-        .thumbnail-carousel-section {
-            padding: 60px 0;
-            background: rgba(0, 51, 160, 0.02);
-        }
-
-        [data-theme="dark"] .thumbnail-carousel-section {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .thumbnail-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .thumbnail-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary, var(--dark-bg));
-        }
-
-        .thumbnail-controls {
-            display: flex;
-            gap: 15px;
-        }
-
-        .thumb-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid rgba(0, 51, 160, 0.1);
-            color: var(--primary-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            font-size: 1.1rem;
-        }
-
-        [data-theme="dark"] .thumb-btn {
-            background: var(--card-bg);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #FFB300;
-        }
-
-        .thumb-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: scale(1.1);
-            border-color: var(--primary-blue);
-        }
-
-        [data-theme="dark"] .thumb-btn:hover {
-            background: #FFB300;
-            color: #000;
-            border-color: #FFB300;
-        }
-
-        .thumbnail-carousel {
-            display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 20px 10px 40px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary-blue) rgba(0, 51, 160, 0.1);
-        }
-
-        .thumbnail-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .thumbnail-carousel::-webkit-scrollbar-track {
-            background: rgba(0, 51, 160, 0.1);
-            border-radius: 10px;
-        }
-
-        .thumbnail-carousel::-webkit-scrollbar-thumb {
-            background: var(--primary-blue);
-            border-radius: 10px;
-        }
-
-        .thumbnail-card {
-            flex: 0 0 300px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition-bounce);
-            cursor: pointer;
-            position: relative;
-        }
-
-        [data-theme="dark"] .thumbnail-card {
-            background: var(--card-bg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .thumbnail-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 121, 0, 0.1), rgba(0, 86, 214, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
-        .thumbnail-card:hover::before {
-            opacity: 1;
-        }
-
-        .thumbnail-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 51, 160, 0.2);
-        }
-
-        .thumbnail-card.active {
-            box-shadow: 0 0 0 4px var(--primary-blue);
-        }
-
-        .thumbnail-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .thumbnail-card:hover .thumbnail-image {
-            transform: scale(1.1);
-        }
-
-        .thumbnail-content {
-            padding: 25px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .thumbnail-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .thumbnail-badge.promotion {
-            background: var(--orange-gradient);
-            color: white;
-        }
-
-        .thumbnail-badge.event {
-            background: var(--purple-gradient);
-            color: white;
-        }
-
-        .thumbnail-badge.nouveau {
-            background: var(--green-gradient);
-            color: white;
-        }
-
-        .thumbnail-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-primary, var(--dark-bg));
-            transition: color 0.3s ease;
-        }
-
-        .thumbnail-card:hover .thumbnail-card-title {
-            color: var(--primary-blue);
-        }
-
-        .thumbnail-card-date {
-            color: var(--text-secondary, #666);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         /* News Grid - Amélioré */
@@ -1044,51 +751,6 @@
         .news-card-link:hover {
             gap: 12px;
             border-bottom-color: var(--primary-blue);
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 60px;
-        }
-
-        .pagination-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid rgba(0, 51, 160, 0.2);
-            color: var(--primary-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-        }
-
-        [data-theme="dark"] .pagination-btn {
-            background: var(--card-bg);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #FFB300;
-        }
-
-        .pagination-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        [data-theme="dark"] .pagination-btn:hover {
-            background: #FFB300;
-            color: #000;
-        }
-
-        .pagination-btn.active {
-            background: var(--primary-blue);
-            color: white;
         }
 
         /* Newsletter - Amélioré */
@@ -1342,31 +1004,6 @@
             box-shadow: 0 15px 40px rgba(255, 121, 0, 0.4);
         }
 
-        /* Loading Animation */
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .loading.active {
-            display: block;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(0, 51, 160, 0.1);
-            border-top-color: var(--primary-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
         /* Notification Toast */
         .toast {
             position: fixed;
@@ -1455,7 +1092,7 @@
             }
             
             .main-carousel {
-                height: 500px;
+                height: 550px;
             }
         }
 
@@ -1488,17 +1125,8 @@
                 flex-direction: column;
             }
 
-            .filter-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            .search-input {
-                width: 100%;
+            .main-carousel {
+                height: 500px;
             }
         }
 
@@ -1512,7 +1140,7 @@
             }
             
             .main-carousel {
-                height: 400px;
+                height: 450px;
             }
             
             .slide-content {
@@ -1523,10 +1151,6 @@
                 font-size: 2rem;
             }
             
-            .thumbnail-card {
-                flex: 0 0 250px;
-            }
-            
             .footer-links {
                 grid-template-columns: 1fr;
             }
@@ -1534,15 +1158,6 @@
             .footer-bottom {
                 flex-direction: column;
                 gap: 20px;
-            }
-
-            .filter-tabs {
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-
-            .filter-tab {
-                white-space: nowrap;
             }
         }
 
@@ -1556,7 +1171,7 @@
             }
             
             .main-carousel {
-                height: 350px;
+                height: 400px;
             }
             
             .slide-title {
@@ -1642,7 +1257,6 @@
     <section class="main-carousel-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">À la Une</span>
                 <h2 class="section-title">Dernières Actualités</h2>
                 <p class="section-description">
                     Découvrez nos principales annonces et événements en vedette
@@ -1654,19 +1268,14 @@
                 <div class="main-carousel" id="mainCarousel">
                     <!-- Slide 1 -->
                     <div class="carousel-slide active">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Nouvelle gamme Samsung S24" class="slide-image">
+                        <img src="assets/images/1.png" 
+                            alt="Nouvelle gamme Samsung S24" class="slide-image">
                         <div class="slide-content">
-                            <span class="slide-badge">Nouveauté</span>
-                            <h3 class="slide-title">Lancement officiel de la gamme Galaxy S24</h3>
+                            <h3 class="slide-title">Spécial Saint-Valentin chez ABS</h3>
                             <p class="slide-description">
-                                Découvrez en avant-première au Bénin la nouvelle gamme Galaxy S24 avec 
-                                l'intelligence artificielle intégrée et des performances révolutionnaires.
+                                Découvrez en exclusivité au Bénin la nouvelle gamme Galaxy S24 avec 
+                                son intelligence artificielle intégrée et ses performances exceptionnelles.
                             </p>
-                            <div class="slide-date">
-                                <i class="far fa-calendar"></i>
-                                <span>15 Janvier 2026</span>
-                            </div>
                             <a href="#" class="slide-cta">
                                 En savoir plus
                                 <i class="fas fa-arrow-right"></i>
@@ -1676,19 +1285,14 @@
                     
                     <!-- Slide 2 -->
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Promotion Orange" class="slide-image">
+                        <img src="assets/images/2.png" 
+                            alt="Promotion Orange" class="slide-image">
                         <div class="slide-content">
-                            <span class="slide-badge">Promotion</span>
-                            <h3 class="slide-title">Promotion exceptionnelle Orange -50%</h3>
+                            <h3 class="slide-title">Profitez des offres spéciales Saint-Valentin</h3>
                             <p class="slide-description">
-                                Profitez de -50% sur les forfaits Orange avec achat d'un smartphone Samsung. 
-                                Offre limitée jusqu'au 28 février 2026.
+                                Bénéficiez de -50% sur les forfaits Orange avec l'achat d'un smartphone Samsung. 
+                                Offre valable jusqu'au 28 février 2026.
                             </p>
-                            <div class="slide-date">
-                                <i class="far fa-calendar"></i>
-                                <span>10 Janvier 2026</span>
-                            </div>
                             <a href="#" class="slide-cta">
                                 Profiter de l'offre
                                 <i class="fas fa-arrow-right"></i>
@@ -1698,19 +1302,14 @@
                     
                     <!-- Slide 3 -->
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Showroom rénové" class="slide-image">
+                        <img src="assets/images/111.png" 
+                            alt="Showroom rénové" class="slide-image">
                         <div class="slide-content">
-                            <span class="slide-badge">Événement</span>
-                            <h3 class="slide-title">Inauguration de notre nouveau showroom</h3>
+                            <h3 class="slide-title">Visitez notre nouveau showroom</h3>
                             <p class="slide-description">
-                                Venez découvrir notre showroom entièrement rénové avec des zones d'expérience 
-                                interactives et toutes les dernières technologies Samsung.
+                                Découvrez notre espace entièrement repensé avec des zones d'expérience 
+                                interactives et toute la gamme des dernières technologies Samsung.
                             </p>
-                            <div class="slide-date">
-                                <i class="far fa-calendar"></i>
-                                <span>5 Janvier 2026</span>
-                            </div>
                             <a href="#" class="slide-cta">
                                 Réserver ma visite
                                 <i class="fas fa-arrow-right"></i>
@@ -1720,19 +1319,14 @@
                     
                     <!-- Slide 4 -->
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Formation entreprise" class="slide-image">
+                        <img src="assets/images/5.png" 
+                            alt="Formation entreprise" class="slide-image">
                         <div class="slide-content">
-                            <span class="slide-badge">Formation</span>
-                            <h3 class="slide-title">Formation gratuite sur les solutions B2B</h3>
+                            <h3 class="slide-title">Faites confiance à ABS pour vos projets technologiques</h3>
                             <p class="slide-description">
-                                Participez à notre session de formation gratuite sur les solutions Samsung 
-                                pour entreprises. Inscription limitée à 20 participants.
+                                Participez à nos ateliers de formation sur les solutions Samsung pour entreprises. 
+                                Sessions gratuites sur inscription (limitées à 20 participants).
                             </p>
-                            <div class="slide-date">
-                                <i class="far fa-calendar"></i>
-                                <span>20 Décembre 2025</span>
-                            </div>
                             <a href="#" class="slide-cta">
                                 S'inscrire
                                 <i class="fas fa-arrow-right"></i>
@@ -1759,10 +1353,9 @@
 
 
     <!-- News Grid Section -->
-    <section class="news-grid-section">
+    <!-- <section class="news-grid-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Archives</span>
                 <h2 class="section-title">Toutes les Actualités</h2>
                 <p class="section-description">
                     Retrouvez l'ensemble de nos publications et annonces
@@ -1902,13 +1495,8 @@
                     </div>
                 </article>
             </div>
-
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Chargement...</p>
-            </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Newsletter Section -->
     <section class="newsletter-section">
@@ -2008,9 +1596,6 @@
             // Initialize all components
             initTheme();
             initCarousel();
-            initThumbnails();
-            initFilters();
-            initSearch();
             initNewsletter();
             initScrollEffects();
             initMobileMenu();
@@ -2039,7 +1624,7 @@
             icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
 
-        // Enhanced Carousel
+        // Enhanced Carousel avec défilement automatique
         function initCarousel() {
             const mainCarousel = document.getElementById('mainCarousel');
             const slides = document.querySelectorAll('.carousel-slide');
@@ -2052,7 +1637,7 @@
             const totalSlides = slides.length;
             let autoSlideInterval;
             let progressInterval;
-            const slideDuration = 5000;
+            const slideDuration = 5000; // 5 secondes par slide
             
             // Create dots
             slides.forEach((_, index) => {
@@ -2077,7 +1662,6 @@
                     dot.classList.toggle('active', index === currentSlide);
                 });
                 
-                updateThumbnails();
                 startProgress();
             }
             
@@ -2161,6 +1745,18 @@
                 }
             });
             
+            // Pause on hover
+            mainCarousel.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+                clearInterval(progressInterval);
+            });
+            
+            mainCarousel.addEventListener('mouseleave', () => {
+                startAutoSlide();
+                startProgress();
+            });
+            
+            // Initialize
             updateCarousel();
             startAutoSlide();
         }
