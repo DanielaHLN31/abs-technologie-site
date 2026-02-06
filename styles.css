@@ -1732,29 +1732,3 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
 }
-
-/* Responsive adjustments for gallery */
-@media (max-width: 1024px) {
-    .gallery-item.large {
-        grid-column: span 1;
-    }
-    
-    .showroom-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .map-container {
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .map-container {
-        height: 350px;
-    }
-}
