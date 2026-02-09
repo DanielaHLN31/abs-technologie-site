@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABS Technologie Group - Distributeur Agréé Samsung & Orange</title>
-    <meta name="description" content="ABS Technologie Group SARL - Distributeur agréé Samsung et représentant exclusif Orange au Bénin. Solutions technologiques innovantes.">
+    <meta name="description" content="ABS Technologie Group SARL - Distributeur agréé Samsung et Meilleures Services Orange au Bénin. Solutions technologiques innovantes.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -40,68 +43,252 @@
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="particles-container" id="particles"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
         <div class="container hero-container">
             <div class="hero-content">
-                <!-- <div class="hero-badge">
-                    <span class="pulse-dot"></span>
-                    <span>Distributeur Officiel</span>
-                </div> -->
-                <!-- <h1 class="hero-title">
-                    <span class="title-line">L'Excellence</span>
-                    <span class="title-line gradient-text">Technologique</span>
-                    <span class="title-line">au Bénin</span>
-                </h1> -->
+                <div class="hero-badge">
+                    <div class="badge-pulse"></div>
+                    <span class="badge-icon">⚡</span>
+                    <span>Distributeur Officiel Samsung & Orange</span>
+                </div>
                 
                 <h1 class="hero-title">
                     <span class="typing-text" id="typingText"></span>
                     <span class="cursor">|</span>
                 </h1>
+                
                 <p class="hero-subtitle">
                     Votre partenaire de confiance pour les solutions Samsung et Orange.
                     Innovation, qualité et service d'exception depuis notre création.
                 </p>
+                
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">
-                        Contactez-nous
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                        <span class="btn-bg"></span>
+                        <span class="btn-content">
+                            Contactez-nous
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </span>
                     </a>
-                    <a href="#services" class="btn btn-secondary">Nos services</a>
+                    <a href="#services" class="btn btn-secondary">
+                        <span class="btn-content">Nos services</span>
+                    </a>
                 </div>
+                
             </div>
+            
             <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <div class="card-icon orange-icon">📱</div>
-                    <div class="card-text">
-                        <div class="card-label">Téléphonie</div>
+                <!-- Carte Premium 1 - Téléphonie -->
+                <div class="floating-card card-premium card-1" data-tilt>
+                    <div class="card-particles"></div>
+                    <div class="card-glow orange-glow"></div>
+                    <div class="card-border-animated"></div>
+                    
+                    <div class="card-header">
+                        <div class="card-icon-wrapper">
+                            <div class="icon-ripple orange-ripple"></div>
+                            <div class="card-icon orange-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2"/>
+                                    <path d="M12 18h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- <div class="card-badge">Popular</div> -->
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-label">
+                            <span class="label-icon">📱</span>
+                            TÉLÉPHONIE
+                        </div>
                         <div class="card-value">Premium</div>
+                        <div class="card-description">
+                            Derniers smartphones Samsung Galaxy avec garantie officielle
+                        </div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Garantie 2 ans</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Livraison gratuite</span>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- <div class="card-footer">
+                        <a href="#" class="card-link">
+                            Découvrir
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div> -->
+                    
+                    <div class="card-shine"></div>
                 </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon blue-icon">📺</div>
-                    <div class="card-text">
-                        <div class="card-label">Électronique</div>
-                        <div class="card-value">Certifiée</div>
+                
+                <!-- Carte Premium 2 - Électronique -->
+                <div class="floating-card card-premium card-2" data-tilt>
+                    <div class="card-particles"></div>
+                    <div class="card-glow blue-glow"></div>
+                    <div class="card-border-animated"></div>
+                    
+                    <div class="card-header">
+                        <div class="card-icon-wrapper">
+                            <div class="icon-ripple blue-ripple"></div>
+                            <div class="card-icon blue-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="15" rx="2"/>
+                                    <polyline points="17 2 12 7 7 2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- <div class="card-badge">Certifié</div> -->
                     </div>
+                    
+                    <div class="card-content">
+                        <div class="card-label">
+                            <span class="label-icon">📺</span>
+                            ÉLECTRONIQUE
+                        </div>
+                        <div class="card-value">Haut Gamme</div>
+                        <div class="card-description">
+                            TV QLED 8K, systèmes audio et électroménager intelligent
+                        </div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Installation incluse</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Support technique</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="card-footer">
+                        <a href="#" class="card-link">
+                            Découvrir
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div> -->
+                    
+                    <div class="card-shine"></div>
                 </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon gradient-icon">🔧</div>
-                    <div class="card-text">
-                        <div class="card-label">Service</div>
+                
+                <!-- Carte Premium 3 - Service -->
+                <div class="floating-card card-premium card-3" data-tilt>
+                    <div class="card-particles"></div>
+                    <div class="card-glow gradient-glow"></div>
+                    <div class="card-border-animated"></div>
+                    
+                    <div class="card-header">
+                        <div class="card-icon-wrapper">
+                            <div class="icon-ripple gradient-ripple"></div>
+                            <div class="card-icon gradient-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- <div class="card-badge">24/7</div> -->
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-label">
+                            <span class="label-icon">🛠️</span>
+                            SERVICE
+                        </div>
                         <div class="card-value">Expert</div>
+                        <div class="card-description">
+                            SAV agréé avec techniciens certifiés et pièces d'origine
+                        </div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Réparation rapide</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Garantie respectée</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="card-footer">
+                        <a href="#" class="card-link">
+                            Découvrir
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div> -->
+                    
+                    <div class="card-shine"></div>
+                </div>
+                
+                <!-- Badges flottants améliorés -->
+                <div class="floating-badge premium-badge badge-1">
+                    <div class="badge-shine"></div>
+                    <div class="badge-content">
+                        <div class="badge-icon-premium">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div class="badge-title">100% Authentique</div>
+                            <div class="badge-subtitle">Garantie officielle</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-badge premium-badge badge-2">
+                    <div class="badge-shine"></div>
+                    <div class="badge-content">
+                        <div class="badge-icon-premium gradient-bg">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div class="badge-title">Livraison Express</div>
+                            <div class="badge-subtitle">Sous 24h</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-badge premium-badge badge-3">
+                    <div class="badge-shine"></div>
+                    <div class="badge-content">
+                        <div class="badge-icon-premium orange-bg">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div class="badge-title">Support 24/7</div>
+                            <div class="badge-subtitle">Toujours disponible</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="hero-scroll">
-            <span>Défiler</span>
-            <svg width="20" height="20" viewBox="0 0 20 20">
-                <path d="M10 4v12M5 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <div class="scroll-indicator">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Découvrez plus</span>
         </div>
     </section>
+
+    
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -117,10 +304,7 @@
                 <div class="service-card" data-aos="fade-up" data-delay="0">
                     <div class="service-number">01</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2"/>
-                            <path d="M12 18h.01"/>
-                        </svg>
+                        <span style="font-size: xx-large;">📱</span>
                     </div>
                     <h3 class="service-title">Téléphonie Mobile</h3>
                     <p class="service-description">
@@ -137,10 +321,7 @@
                 <div class="service-card" data-aos="fade-up" data-delay="100">
                     <div class="service-number">02</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="15" rx="2"/>
-                            <polyline points="17 2 12 7 7 2"/>
-                        </svg>
+                        <span style="font-size: xx-large;">📺</span>
                     </div>
                     <h3 class="service-title">Électronique Grand Public</h3>
                     <p class="service-description">
@@ -157,9 +338,7 @@
                 <div class="service-card" data-aos="fade-up" data-delay="200">
                     <div class="service-number">03</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
+                        <span style="font-size: xx-large;">🔧</span>
                     </div>
                     <h3 class="service-title">Service Après-Vente</h3>
                     <p class="service-description">
@@ -176,11 +355,7 @@
                 <div class="service-card" data-aos="fade-up" data-delay="300">
                     <div class="service-number">04</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
+                        <span style="font-size: xx-large;">🏢</span>
                     </div>
                     <h3 class="service-title">Solutions Entreprises</h3>
                     <p class="service-description">
@@ -234,16 +409,16 @@
                 </div>
 
                 <div class="partner-card orange-card" data-aos="zoom-in" data-delay="200">
-                    <div class="partner-badge">Représentant Exclusif</div>
+                    <div class="partner-badge">Meilleures Services</div>
                     <div class="partner-logo">
                         <div class="orange-logo">Orange</div>
                     </div>
                     <h3>Orange Bénin</h3>
-                    <p>Représentant exclusif Orange pour les solutions télécoms. Forfaits, services et accompagnement complet pour particuliers et entreprises.</p>
+                    <p>Meilleures Services Orange pour les solutions télécoms. Forfaits, services et accompagnement complet pour particuliers et entreprises.</p>
                     <div class="partner-stats">
                         <div class="stat">
-                            <div class="stat-value">1er</div>
-                            <div class="stat-label">Réseau National</div>
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Garantie</div>
                         </div>
                         <div class="stat">
                             <div class="stat-value">∞</div>
@@ -280,8 +455,8 @@
                         >
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Showroom Extérieur</h4>
-                                <p>Notre magasin moderne à Camp Guezo</p>
+                                <h4>Nos offres</h4>
+                                <p>Profitez de nos promotions</p>
                             </div>
                         </div>
                     </div>
@@ -298,8 +473,8 @@
                         >
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Intérieur Showroom</h4>
-                                <p>Espace d'exposition moderne et professionnel</p>
+                                <h4>Notre Équipe</h4>
+                                <p>Conseillers certifiés à votre service</p>
                             </div>
                         </div>
                     </div>
@@ -346,14 +521,14 @@
                     <div class="gallery-image">
                         <img 
                             src="assets/images/5.png" 
-                            alt="Produits et services Orange"
+                            alt="Pour faire bon vivre chez vous !"
                             loading="lazy"
                             class="gallery-img"
                         >
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Services Orange</h4>
-                                <p>Forfaits mobiles et solutions</p>
+                                <h4>ABS Technologie</h4>
+                                <p>Pour faire bon vivre chez vous !</p>
                             </div>
                         </div>
                     </div>
@@ -370,8 +545,8 @@
                         >
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Notre Équipe</h4>
-                                <p>Conseillers certifiés à votre service</p>
+                                <h4>Samsung & Orange</h4>
+                                <p>Les meilleurs services à votre disposition </p>
                             </div>
                         </div>
                     </div>
@@ -389,8 +564,8 @@
                         >
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Notre Équipe</h4>
-                                <p>Conseillers certifiés à votre service</p>
+                                <h4>Des nouveautés</h4>
+                                <p>Passez à notre showroom pour découvrir les nouvelles technologies à votre disposition</p>
                             </div>
                         </div>
                     </div>
@@ -413,15 +588,18 @@
                     <h2 class="section-title">ABS Technologie Group</h2>
                     <p class="about-text">
                         <strong>ABS TECHNOLOGIE Group SARL</strong> s'est imposée comme un acteur majeur 
-                        de la distribution technologique au Bénin. En tant que distributeur agréé Samsung 
-                        et représentant exclusif Orange, nous offrons à nos clients l'accès aux meilleures 
+                        de la distribution technologique et électroménagère au Bénin. En tant que distributeur agréé Samsung 
+                        et partenaire Meilleures Services Orange, nous offrons à nos clients un accès privilégié aux meilleures 
                         innovations technologiques mondiales.
                     </p>
                     <p class="about-text">
                         Notre engagement envers l'excellence se traduit par un service client irréprochable, 
-                        des produits authentiques garantis et une expertise technique reconnue. Nous 
-                        accompagnons particuliers et entreprises dans leur transformation digitale.
+                        des produits authentiques garantis et une expertise technique reconnue. Nous intervenons 
+                        aussi bien auprès des ménages que des entreprises, en proposant la vente, l’installation 
+                        et la maintenance d’appareils électroménagers et électroniques, tout en accompagnant nos 
+                        clients dans leur transformation digitale.
                     </p>
+
                     <div class="about-values">
                         <div class="value-item">
                             <div class="value-icon">✓</div>
@@ -513,7 +691,7 @@
                             </div>
                             <div class="detail-content">
                                 <h4>Téléphone</h4>
-                                <p><a href="tel:+22996062626">+229 96 06 26 26</a></p>
+                                <p><a href="tel:+22996062626">+229 61 06 26 26 - +229 96 06 26 26</a></p>
                             </div>
                         </div>
                         
@@ -523,7 +701,7 @@
                             </div>
                             <div class="detail-content">
                                 <h4>Email</h4>
-                                <p><a href="mailto:contact@abstechnologie.com">contact@abstechnologie.com</a></p>
+                                <p><a href="mailto:dc@abstechnologie.com ">dc@abstechnologie.com </a></p>
                             </div>
                         </div>
                     </div>
@@ -585,7 +763,7 @@
                             </div>
                             <div class="info-content">
                                 <h4>Téléphone</h4>
-                                <p>+229 01 96 06 26 26</p>
+                                <p>+229 61 06 26 26 - +229 96 06 26 26</p>
                             </div>
                         </div>
 
@@ -598,7 +776,7 @@
                             </div>
                             <div class="info-content">
                                 <h4>Email</h4>
-                                <p>contact@abstechnologie.com</p>
+                                <p>dc@abstechnologie.com </p>
                             </div>
                         </div>
 
@@ -611,7 +789,7 @@
                             </div>
                             <div class="info-content">
                                 <h4>Horaires</h4>
-                                <p>Lun - Ven: 8h - 18h<br>Dim: Fermé</p>
+                                <p>Lun - Sam: 9h - 18h<br>Dim: Fermé</p>
                             </div>
                         </div>
                     </div>
@@ -622,7 +800,7 @@
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">
+                        <a href="https://wa.me/2290196062626" class="social-link" aria-label="WhatsApp">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                             </svg>
@@ -721,8 +899,8 @@
                         <h4>Contact</h4>
                         <ul>
                             <li>En Face de HÔPITAL DES ARMÉES, Camp Guezo, 03 B.P 1825, Cotonou</li>
-                            <li>+229 01 96 06 26 26</li>
-                            <li>contact@abstechnologie.com</li>
+                            <li>+229 61 06 26 26 - +229 96 06 26 26</li>
+                            <li>dc@abstechnologie.com </li>
                         </ul>
                     </div>
                 </div>
@@ -730,7 +908,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 ABS TECHNOLOGIE Group SARL. Tous droits réservés.</p>
                 <p class="footer-partners">
-                    Distributeur agréé <strong>Samsung</strong> | Représentant exclusif <strong>Orange</strong>
+                    Distributeur agréé <strong>Samsung</strong> | Meilleures Services <strong>Orange</strong>
                 </p>
             </div>
         </div>
