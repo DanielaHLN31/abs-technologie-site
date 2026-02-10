@@ -119,38 +119,38 @@ window.addEventListener('scroll', () => {
 });
 
 // ==================== Gestion du formulaire ====================
-const contactForm = document.querySelector('.contact-form');
+// const contactForm = document.querySelector('.contact-form');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        // Le formulaire Netlify gère automatiquement la soumission
-        // On peut ajouter des animations ou des validations supplémentaires ici
+// if (contactForm) {
+//     contactForm.addEventListener('submit', async (e) => {
+//         // Le formulaire Netlify gère automatiquement la soumission
+//         // On peut ajouter des animations ou des validations supplémentaires ici
         
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
+//         const submitButton = contactForm.querySelector('button[type="submit"]');
+//         const originalText = submitButton.innerHTML;
         
-        // Animation du bouton pendant la soumission
-        submitButton.innerHTML = `
-            <span>Envoi en cours...</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" class="spinner">
-                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="50" stroke-dashoffset="25" />
-            </svg>
-        `;
-        submitButton.disabled = true;
+//         // Animation du bouton pendant la soumission
+//         submitButton.innerHTML = `
+//             <span>Envoi en cours...</span>
+//             <svg width="20" height="20" viewBox="0 0 20 20" class="spinner">
+//                 <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="50" stroke-dashoffset="25" />
+//             </svg>
+//         `;
+//         submitButton.disabled = true;
         
-        // Ajouter animation CSS pour le spinner
-        const style = document.createElement('style');
-        style.textContent = `
-            .spinner circle {
-                animation: spin 1s linear infinite;
-            }
-            @keyframes spin {
-                to { stroke-dashoffset: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    });
-}
+//         // Ajouter animation CSS pour le spinner
+//         const style = document.createElement('style');
+//         style.textContent = `
+//             .spinner circle {
+//                 animation: spin 1s linear infinite;
+//             }
+//             @keyframes spin {
+//                 to { stroke-dashoffset: 0; }
+//             }
+//         `;
+//         document.head.appendChild(style);
+//     });
+// }
 
 // ==================== Validation du formulaire ====================
 const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select');
