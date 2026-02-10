@@ -1416,12 +1416,8 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden">
-                            <label>Ne pas remplir: <input name="bot-field" /></label>
-                        </p>
-                        
+                    <form name="contact" action="https://formspree.io/f/xlgwdqbg" method="POST" class="contact-form">
+                        <!-- Vos champs restent identiques -->
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -1455,15 +1451,14 @@
                             <label for="message">Message *</label>
                             <textarea id="message" name="message" required rows="5" placeholder="Décrivez votre besoin..."></textarea>
                         </div>
-
+                        
                         <button type="submit" class="btn btn-primary btn-full">
                             <span>Envoyer le message</span>
+                            
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M19 1L9 11M19 1l-6 18-4-8-8-4 18-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
-
-                        <p class="form-note">* Champs obligatoires</p>
                     </form>
                 </div>
             </div>
@@ -1532,12 +1527,140 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle toast-icon"></i>
-        <span class="toast-message">Message</span>
-    </div>
 
+    <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 99999;"></div>
+    <!-- Script pour le formulaire avec Toast -->
+    <script>
+    // Fonction pour afficher un toast
+    function showToast(message, type = 'success') {
+        const toastContainer = document.getElementById('toast-container');
+        
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.style.cssText = `
+            background: ${type === 'success' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : '#f44336'};
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 300px;
+            animation: slideIn 0.4s ease-out;
+            font-family: 'Montserrat', sans-serif;
+        `;
+        
+        const icon = type === 'success' ? '✓' : '✕';
+        toast.innerHTML = `
+            <div style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255,255,255,0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: bold;
+            ">${icon}</div>
+            <div style="flex: 1;">
+                <div style="font-weight: 600; margin-bottom: 4px;">
+                    ${type === 'success' ? 'Message envoyé !' : 'Erreur'}
+                </div>
+                <div style="font-size: 14px; opacity: 0.9;">${message}</div>
+            </div>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Animation de sortie après 5 secondes
+        setTimeout(() => {
+            toast.style.animation = 'slideOut 0.4s ease-out';
+            setTimeout(() => {
+                toastContainer.removeChild(toast);
+            }, 400);
+        }, 5000);
+    }
+
+    // Animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        
+        .toast {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .toast:hover {
+            transform: translateY(-2px);
+        }
+    `;
+    document.head.appendChild(style);
+    
+    
+    // Gérer la soumission du formulaire
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        
+        // Désactiver le bouton
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span>Envoi en cours...</span>';
+        
+        // 🔥 CHANGEZ CETTE LIGNE : envoyez à Formspree, pas à '/'
+        fetch('https://formspree.io/f/xlgwdqbg', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                showToast('Nous vous répondrons dans les plus brefs délais.', 'success');
+                this.reset();
+            } else {
+                return response.json().then(data => {
+                    throw new Error(data.error || 'Erreur lors de l\'envoi');
+                });
+            }
+        })
+        .catch((error) => {
+            showToast('Une erreur est survenue. Veuillez réessayer.', 'error');
+            console.error('Erreur:', error);
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        });
+    });
+    </script>
     <script>
         // Main App Initialization
         document.addEventListener('DOMContentLoaded', function() {
@@ -1728,28 +1851,6 @@
             scrollTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        }
-
-        // Toast Notification
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const toastMessage = toast.querySelector('.toast-message');
-            const toastIcon = toast.querySelector('.toast-icon');
-            
-            toastMessage.textContent = message;
-            toast.className = `toast ${type}`;
-            
-            if (type === 'success') {
-                toastIcon.className = 'fas fa-check-circle toast-icon';
-            } else {
-                toastIcon.className = 'fas fa-exclamation-circle toast-icon';
-            }
-            
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
         }
 
         // Smooth scroll for anchor links
